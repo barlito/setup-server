@@ -1,0 +1,11 @@
+---
+- hosts: "{{ traefik_hosts }}"
+  name: "Start traefik service"
+  become: true
+
+  vars_files:
+    - "{{ playbook_dir }}/../env.yml"
+
+  roles:
+    - role: "ansible.traefik.swarm"
+      when: install_traefik

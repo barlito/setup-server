@@ -1,0 +1,28 @@
+---
+- hosts: "{{ docker_hosts }}"
+  name: "Install docker"
+  become: true
+
+  vars_files:
+    - "{{ playbook_dir }}/../env.yml"
+
+  roles:
+    - role: "nickjj.docker"
+      vars:
+        docker__pip_dependencies:
+          - "gcc"
+          - "python3-setuptools"
+          - "python3-dev"
+          - "python3-pip"
+          - "virtualenv"
+          - "python3-jsondiff"
+          - "python3-yaml"
+      when: install_docker
+
+  tasks:
+    - name: Init a new swarm with default parameters
+      community.docker.docker_swarm:
+        state: present
+        advertise_addr: "{{ docker_advertise_addr }}"
+      vars:
+        ansible_python_interpreter: "/usr/bin/env python3-docker"

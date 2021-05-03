@@ -1,0 +1,9 @@
+---
+
+collections:
+  - community.docker
+  - community.crypto
+
+roles:
+  - src: nickjj.docker
+  - src: https://github.com/barlito/ansible.traefik.swarm.git

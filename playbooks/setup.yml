@@ -1,0 +1,7 @@
+---
+
+- import_playbook: packages.yml
+
+- import_playbook: docker.yml
+
+- import_playbook: traefik.yml
