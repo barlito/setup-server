@@ -62,3 +62,15 @@ You can ommit it if you're sure that the ansible module will detect yours automa
 ### Traefik
 
 Refer to this [repository doc](https://github.com/barlito/ansible.traefik.swarm)
+
+
+# Notes
+
+
+If you want to run it localy, you'll need to disable ssh host key checking for ansible, just add this line in your .env file : 
+
+    ansible_ssh_extra_args: '-o StrictHostKeyChecking=no'
+	
+And you'll need to declare your server like this :  
+
+    127.0.0.1 ansible_connection=local
