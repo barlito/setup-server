@@ -15,7 +15,8 @@ It install also Docker and turn on swarm mode and on top of that, it install the
 # Prerequisites
 
 - [Ansible](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html)
-- Make
+- Make    | `apt install make`
+- sshpass | `apt install sshpass`
 
 # Install
 
