@@ -26,3 +26,4 @@
         advertise_addr: "{{ docker_advertise_addr }}"
       vars:
         ansible_python_interpreter: "/usr/bin/env python3-docker"
+      when: install_docker
